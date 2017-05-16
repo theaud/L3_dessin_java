@@ -1,0 +1,24 @@
+/
+
+
+1 gestion et generation des dessins
+
+2 dessin = liste de forme avec positionnement relatif
+
+3 calcul perimetre et air : forme ,images et dessins
+
+4 Les formes géométriques peuvent subir les transformations suivantes : homothétie, translation, rotation,
+ symétrie centrale, symétrie axiale
+
+5 Le tri des formes d'une image selon plusieurs critères: leur périmètre, leur aire et leur distance à l'origine.
+
+6 Le clonage d'un dessin est obtenu par clonage de tous ses composants.
+
+
+Rendu console fonction a faire :
+1 choisir d'ajouter une forme
+2 choisir de cree un dessin (boite de forme avec 1 point d'origine =>les forme sont placer en 2D par rapportt a lui
+3 afficher/masquer le dessin voulu
+4 mode dessin/fresque et mode juste forme
+5 deplacer une forme dans un dessin
+
