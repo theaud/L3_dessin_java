@@ -71,10 +71,10 @@ public class ComplexeInt {
         int partieim = (this._re * C._im - this._im * C._re);
         return new ComplexeInt(partiere, partieim);
     }
-   
-    
-    
-    
+
+
+    public void afficher(String nom_variable)
+    {System.out.println(nom_variable+" : reel "+_re+" imaginaire "+_im);}
     
     
     

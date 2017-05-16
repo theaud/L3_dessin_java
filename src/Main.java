@@ -1,4 +1,3 @@
-import Graphique.Jpanel.Fenetre;
 import Graphique.app.Application;
 
 public class Main {
@@ -9,6 +8,9 @@ public class Main {
 
         Application test=new Application();
 
+
+        test.paint(test.getGraphics());
+        test.afficher();
 
     }
 }
