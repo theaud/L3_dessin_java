@@ -11,9 +11,9 @@ public class Fenetre extends JPanel {
 
     protected LinkedList<Form> form= new LinkedList<Form>();
     protected LinkedList<JLabel> texte= new LinkedList<JLabel>();
-    protected Dimension dim=new Dimension(500,500);
+    protected Dimension dim=new Dimension(800,800);
     protected static int compteur=0;
-    protected String name="Fenetre autogeneration"+(compteur++);
+    protected String name="Ma fenetre";
 
 
     protected int isopen=0;

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 /**
  * Created by mathieu on 16/05/2017.
  */
-public class polygone extends forme {
+public class polygone extends Forme {
 
     LinkedList<ComplexeInt> sommets=new LinkedList<ComplexeInt>();
 
@@ -16,5 +16,10 @@ public class polygone extends forme {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "polygone{" +
+                "sommets=" + sommets +
+                '}';
+    }
 }

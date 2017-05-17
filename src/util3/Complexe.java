@@ -35,6 +35,11 @@ public class Complexe {
         return new Complexe(partiere, partieim);
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Complexe{" +
+                "_im=" + _im +
+                ", _re=" + _re +
+                '}';
+    }
 }

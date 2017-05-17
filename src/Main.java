@@ -1,16 +1,27 @@
 import Graphique.app.Application;
+import Graphique.dessin.Forme;
+import Graphique.dessin.Ligne;
+import Graphique.dessin.cercle;
+import Graphique.dessin.ellipse;
+
+import java.awt.*;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
 
 
-        Application test=new Application();
+        Application appli = new Application();
 
 
-        test.paint(test.getGraphics());
-        test.afficher();
+
+        appli.fonction();
+
 
     }
+
+
+
+
 }

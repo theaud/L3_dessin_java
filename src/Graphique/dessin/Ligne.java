@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * Created by mathieu on 16/05/2017.
  */
-public class Ligne extends forme{
+public class Ligne extends Forme {
 
     public ComplexeInt second=new ComplexeInt();
 
@@ -22,16 +22,31 @@ public class Ligne extends forme{
 
     }
 
+    public Ligne(int origineX,int origineY,int secondX,int secondY)
+    {origine=new ComplexeInt(origineX,origineY);
+     second=new ComplexeInt(secondX,secondY);;
+    }
+
     public void paint(Graphics g) {
         super.paint(g);
 
 
+        if(origine.getRe()==second.getRe())
+            {for(int i=-3;i<3;i++){g.drawLine(origine.getRe()+i,origine.getIm(),second.getRe()+i,second.getIm());}}
+        else if(origine.getIm()==second.getIm())
+            {for(int i=-3;i<3;i++){ g.drawLine(origine.getRe(),origine.getIm()+i,second.getRe(),second.getIm()+i);}}
+        else
+            {for(int i=-3;i<3;i++){g.drawLine(origine.getRe()+i,origine.getIm(),second.getRe()+i,second.getIm());}}
 
-        g.create(origine.getRe(),origine.getIm(),10,20);
-        g.setColor(couleur);
-        System.out.println("Ligne Paint");
+
+
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Ligne{" +
+                "second=" + second +
+                '}';
+    }
 }

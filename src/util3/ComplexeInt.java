@@ -75,8 +75,13 @@ public class ComplexeInt {
 
     public void afficher(String nom_variable)
     {System.out.println(nom_variable+" : reel "+_re+" imaginaire "+_im);}
-    
-    
-    
-    
+
+
+    @Override
+    public String toString() {
+        return "ComplexeInt{" +
+                "_im=" + _im +
+                ", _re=" + _re +
+                '}';
+    }
 }
