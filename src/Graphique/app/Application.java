@@ -18,7 +18,7 @@ public class Application extends Jframeadd {
     public Application(){
 
         Dessin.add(Graphique.app.Dessin.toto());
-        Dessin.add(new Dessin("test"));
+        Dessin.add(Graphique.app.Dessin.test());
         Dessin.add(new Dessin());
 
         Dessin_courant=Dessin.get(0);
@@ -65,16 +65,13 @@ public class Application extends Jframeadd {
                     case 3:
 
                         break;
-                    case 4: if(Dessin.size()==1)
-                        {
-                            System.out.println("Il n'y a pas d'autre dessin");
-                        }
+                    case 4: if(Dessin.size()==1) { System.out.println("Il n'y a pas d'autre dessin");}
                         else
                         {int i=0;
                             System.out.println("Choix du nouveau dessin :");
                             for(Dessin a:Dessin)
                             {i++;
-                                System.out.println(i+") Dessin "+a.Nom+" ");
+                                System.out.println(i+") "+a.Nom+" ");
                             }
                             System.out.println("retour  "+(i+1));
                             int  choix = util3.scanner.scannerint(1,i+1);
@@ -85,7 +82,9 @@ public class Application extends Jframeadd {
                         }
 
                         break;
-                    case 5: Dessin_courant=new Dessin();
+                    case 5: System.out.println("Quel est le nom de votre nouveau dessin");
+                            Dessin_courant=new Dessin(util3.scanner.scannerString());
+
                             Dessin.add(Dessin_courant);
 
                         break;
@@ -106,16 +105,14 @@ public class Application extends Jframeadd {
 
         System.out.println("\n\n----------------------------------------");
         System.out.println("Menu : que souhaitez-vous faire?");
-        System.out.println("Ajoutez une Forme :1");
-        System.out.println("Consulter les formes deja présente :2");//voir detaille , deplacer / supprimer
-        System.out.println("Trier les formes :3");
-        System.out.println("Charger un autre dessin :4");
-        System.out.println("cree un nouveau dessin :5");
-        System.out.println("Quitter :6");
-
+        System.out.println("1) Ajoutez une Forme :");
+        System.out.println("2) Consulter les formes deja présente :");//voir detaille , deplacer / supprimer
+        System.out.println("3) Trier les formes :");
+        System.out.println("4) Charger un autre dessin :");
+        System.out.println("5) cree un nouveau dessin :");
+        System.out.println("6) Quitter :");
 
         sortie = util3.scanner.scannerint(1, 6);
-
 
         return sortie;
     }
@@ -138,9 +135,9 @@ public class Application extends Jframeadd {
         {System.out.println(i+") "+Dessin_courant.Liste.get(choix).toString()+"\n");
 
             System.out.println(" Que souhaitez-vous faire");
-            System.out.println(" Deplacer la forme : 1 ");//
-            System.out.println(" supprimer la forme : 2 ");
-            System.out.println(" retour : 3 ");
+            System.out.println("1) Deplacer la forme :  ");//
+            System.out.println("2) supprimer la forme :  ");
+            System.out.println("3) retour :  ");
 
             switch (util3.scanner.scannerint(1, 3))
             {case 1:break;//homothétie, translation, rotation,  symétrie centrale, symétrie axiale.

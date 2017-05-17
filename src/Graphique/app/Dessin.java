@@ -4,18 +4,15 @@ import Graphique.dessin.Forme;
 import Graphique.dessin.Ligne;
 import Graphique.dessin.cercle;
 import Graphique.dessin.ellipse;
-import util3.Complexe;
+
 import util3.ComplexeInt;
 
-import java.awt.*;
 import java.util.LinkedList;
 
-/**
- * Created by mathieu on 17/05/2017.
- */
+
 public class Dessin {
 
-    public LinkedList<Forme> Liste=new LinkedList() ;
+    public LinkedList<Forme> Liste=new LinkedList<Forme>() ;
     public String Nom="sans nom";
 
 
@@ -27,20 +24,25 @@ public class Dessin {
     public   Dessin(String nom)
     {   Nom=nom;
 
-        Liste.add(new Ligne(50,50,100,50));
-        Liste.add(new Ligne(150,100,150,150));
-        Liste.add(new Ligne(300,300,400,400));
-
-
-         Liste.add(new cercle(300,300,50));
-        Liste.add(new cercle(300,300,30));
-
-        Liste.add(new ellipse(600,600,50,50));
-        Liste.add(new ellipse(600,600,50,40));
-        Liste.add(new ellipse(600,600,40,50));
 
     }
+    public static Dessin test()
+    {    Dessin returned =new Dessin();
+        returned.Nom="test";
 
+        returned.Liste.add(new Ligne(50,50,100,50));
+        returned.Liste.add(new Ligne(150,100,150,150));
+        returned.Liste.add(new Ligne(300,300,400,400));
+
+
+        returned.Liste.add(new cercle(300,300,50));
+        returned.Liste.add(new cercle(300,300,30));
+
+        returned.Liste.add(new ellipse(600,600,50,50));
+        returned.Liste.add(new ellipse(600,600,50,40));
+        returned. Liste.add(new ellipse(600,600,40,50));
+        return returned;
+    }
     public  static Dessin toto()
     {   Dessin returned =new Dessin();
         returned.Nom="toto";

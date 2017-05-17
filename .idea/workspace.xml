@@ -1,30 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eafa1ca9-8461-4f97-b0b8-e75a44fe7c55" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Graphique/app/Dessin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Graphique/dessin/superposition_Forme.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util3/scanner.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/L3_dessin_java/Graphique/app/test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Graphique/GridBagLayoutDemo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Graphique/app/test.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Graphique/dessin/DessineMoiUnMouton.pdf" afterPath="$PROJECT_DIR$/src/Graphique/DessineMoiUnMouton.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/L3_dessin_java/Graphique/Jpanel/Fenetre.class" afterPath="$PROJECT_DIR$/out/production/L3_dessin_java/Graphique/Jpanel/Fenetre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/L3_dessin_java/Graphique/app/Application.class" afterPath="$PROJECT_DIR$/out/production/L3_dessin_java/Graphique/app/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/L3_dessin_java/Main.class" afterPath="$PROJECT_DIR$/out/production/L3_dessin_java/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/L3_dessin_java/util3/Complexe.class" afterPath="$PROJECT_DIR$/out/production/L3_dessin_java/util3/Complexe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/L3_dessin_java/util3/ComplexeInt.class" afterPath="$PROJECT_DIR$/out/production/L3_dessin_java/util3/ComplexeInt.class" />
+    <list default="true" id="eafa1ca9-8461-4f97-b0b8-e75a44fe7c55" name="Default" comment="version basique v2 avant dodo">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/Jpanel/Fenetre.java" afterPath="$PROJECT_DIR$/src/Graphique/Jpanel/Fenetre.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/app/Application.java" afterPath="$PROJECT_DIR$/src/Graphique/app/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/dessin/Ligne.java" afterPath="$PROJECT_DIR$/src/Graphique/dessin/Ligne.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/dessin/cercle.java" afterPath="$PROJECT_DIR$/src/Graphique/dessin/cercle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/dessin/ellipse.java" afterPath="$PROJECT_DIR$/src/Graphique/dessin/ellipse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/dessin/forme.java" afterPath="$PROJECT_DIR$/src/Graphique/dessin/forme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/dessin/polygone.java" afterPath="$PROJECT_DIR$/src/Graphique/dessin/polygone.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util3/Complexe.java" afterPath="$PROJECT_DIR$/src/util3/Complexe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util3/ComplexeInt.java" afterPath="$PROJECT_DIR$/src/util3/ComplexeInt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphique/app/Dessin.java" afterPath="$PROJECT_DIR$/src/Graphique/app/Dessin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util3/scanner.java" afterPath="$PROJECT_DIR$/src/util3/scanner.java" />
     </list>
     <ignored path="L3_dessin_java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,11 +31,21 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graphique/app/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.62069">
-              <caret line="48" column="25" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="25" />
+            <state vertical-scroll-proportion="-6.37931">
+              <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scanner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util3/scanner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,15 +70,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dessin.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dessin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graphique/app/Dessin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.25846502">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
+                <element signature="e#282#289#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,22 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cercle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Graphique/dessin/cercle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55119455">
+            <state vertical-scroll-proportion="0.0">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -196,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/Graphique/GridBagLayoutDemo.java" />
         <option value="$PROJECT_DIR$/src/Graphique/app/test.java" />
         <option value="$PROJECT_DIR$/src/Graphique/Jpanel/Fenetre.java" />
-        <option value="$PROJECT_DIR$/src/util3/scanner.java" />
         <option value="$PROJECT_DIR$/src/Graphique/dessin/Ligne.java" />
         <option value="$PROJECT_DIR$/src/Graphique/dessin/polygone.java" />
         <option value="$PROJECT_DIR$/src/Graphique/dessin/cercle.java" />
@@ -206,9 +184,10 @@
         <option value="$PROJECT_DIR$/src/util3/Complexe.java" />
         <option value="$PROJECT_DIR$/src/Graphique/dessin/Dessin.java" />
         <option value="$PROJECT_DIR$/src/Graphique/dessin/superposition_Forme.java" />
-        <option value="$PROJECT_DIR$/src/Graphique/app/Dessin.java" />
-        <option value="$PROJECT_DIR$/src/Graphique/app/Application.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/util3/scanner.java" />
+        <option value="$PROJECT_DIR$/src/Graphique/app/Application.java" />
+        <option value="$PROJECT_DIR$/src/Graphique/app/Dessin.java" />
       </list>
     </option>
   </component>
@@ -279,6 +258,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L3_dessin_java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L3_dessin_java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -812,7 +809,7 @@
       <workItem from="1494324933838" duration="221000" />
       <workItem from="1494338697303" duration="896000" />
       <workItem from="1494921315916" duration="8061000" />
-      <workItem from="1494965151044" duration="13479000" />
+      <workItem from="1494965151044" duration="14260000" />
     </task>
     <task id="LOCAL-00001" summary="version seance TP , pas tres fonctionnel">
       <created>1494928940145</created>
@@ -820,11 +817,17 @@
       <option name="project" value="LOCAL" />
       <updated>1494928940145</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="version basique">
+      <created>1494979574596</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1494979574596</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23942000" />
+    <option name="totallyTimeSpent" value="24723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1356" height="1047" extended-state="0" />
@@ -832,11 +835,11 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.50428724" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32822758" sideWeight="0.49571276" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.49571276" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38425925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -891,7 +894,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="version seance TP , pas tres fonctionnel" />
-    <option name="LAST_COMMIT_MESSAGE" value="version seance TP , pas tres fonctionnel" />
+    <MESSAGE value="version basique" />
+    <MESSAGE value="version basique v2 avant dodo" />
+    <option name="LAST_COMMIT_MESSAGE" value="version basique v2 avant dodo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1199,14 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util3/scanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphique/dessin/polygone.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1243,30 +1240,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/dessin/ellipse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphique/dessin/Ligne.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/dessin/Forme.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1297,34 +1274,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graphique/app/Dessin.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphique/dessin/ellipse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphique/dessin/Forme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util3/scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphique/app/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.62069">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="25" />
+        <state vertical-scroll-proportion="-6.37931">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Graphique/app/Dessin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55119455">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.25846502">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#282#289#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -40,7 +40,12 @@ public static int scannerint()
     }
 
 
-
+    public static String  scannerString()
+    {
+        Scanner scanner = new Scanner(System. in);
+        String a=scanner.nextLine();
+        return  a;
+    }
 
 
 
