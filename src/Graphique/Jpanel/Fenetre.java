@@ -19,14 +19,14 @@ public class Fenetre extends JPanel {
     protected int isopen=0;
 
     public Fenetre(){
-        setSize(dim);
 
 
+        setBackground(new Color(0,0,0));setSize(dim);
     }
 
     public Fenetre(Color color){
        // name="Fenetre autogeneration"+(compteur++);
-        setBackground(color);setSize(dim);
+
 
 
     }

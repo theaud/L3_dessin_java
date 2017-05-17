@@ -1,5 +1,6 @@
 package Graphique.dessin;
 
+import Graphique.app.LPixel;
 import util3.ComplexeInt;
 
 import java.awt.*;
@@ -41,7 +42,11 @@ public class cercle extends Forme {
         }
 
     }
+    public LPixel ajoue_pixel()
+    {super.ajoue_pixel();
 
+        return new LPixel();
+    }
 
     @Override
     public String toString() {

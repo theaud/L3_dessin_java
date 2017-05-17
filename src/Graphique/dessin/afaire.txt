@@ -16,9 +16,9 @@
 
 
 Rendu console fonction a faire :
-1 choisir d'ajouter une forme
-2 choisir de cree un dessin (boite de forme avec 1 point d'origine =>les forme sont placer en 2D par rapportt a lui
+2 a moitier choisir de cree un dessin (boite de forme avec 1 point d'origine =>les forme sont placer en 2D par rapportt a lui
 3 afficher/masquer le dessin voulu
 4 mode dessin/fresque et mode juste forme
 5 deplacer une forme dans un dessin
 
+En cour creation table pixel => calcul aire image => definir par selection aire
