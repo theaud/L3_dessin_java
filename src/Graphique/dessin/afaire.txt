@@ -1,7 +1,6 @@
 /
 
 
-1 gestion et generation des dessins
 
 2 dessin = liste de forme avec positionnement relatif
 

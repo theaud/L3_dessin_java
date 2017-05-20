@@ -2,6 +2,7 @@ package Graphique.app;
 
 import Graphique.Jpanel.Jframeadd;
 import Graphique.dessin.Forme;
+import util3.ComplexeInt;
 
 import java.awt.*;
 import java.util.LinkedList;
@@ -10,6 +11,7 @@ public class Application extends Jframeadd {
 
     public LinkedList<Dessin> Dessin=new LinkedList() ;
     public Dessin Dessin_courant ;
+
     public  String title;
 
     public Application(){
@@ -39,72 +41,21 @@ public void paint(Graphics g) {
 
 public int air(Graphics g) {
 
-
-/*
-        int air = 0;
-
-
+/*int air = 0;
     Color red=new Color(255,0,0);
-
     for(int y = 0; y < HEIGHT; y++)
     {for(int x = 0; x < WIDTH; x++)
-        {
-            if(getGraphics().getColor().getRed()==red.getRed() && getGraphics().getColor().getGreen()==red.getGreen() && getGraphics().getColor().getBlue()==red.getBlue() &&x%10==0)
+        {if(getGraphics().getColor().getRed()==red.getRed() && getGraphics().getColor().getGreen()==red.getGreen() && getGraphics().getColor().getBlue()==red.getBlue() &&x%10==0)
             {
-
                 System.out.println(getGraphics().getColor().getRed()+" "+getGraphics().getColor().getGreen()+" "+getGraphics().getColor().getBlue()+" ");
                 System.out.println(getGraphics().getColor());
                 air++;
             }
-
-
-
         }
     }
     System.out.println(air);
         return air;*/
     return 1;
-    }
-
-public  void fonction() {
-        boolean test = true;
-        int menu;
-
-
-         paint(getGraphics());
-
-        do {
-            menu = Menu();
-
-
-            if (menu != 9) {
-                switch (menu) {
-                    case 1:
-                        Dessin_courant.ajout_forme();
-                        break;
-                    case 2:Menu_consultation_forme( );
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:Menu_gestion_dessin();
-                        break;
-                    case 5: System.out.println("Quel est le nom de votre nouveau dessin");
-                            Dessin_courant=new Dessin(util3.scanner.scannerString());
-
-                            Dessin.add(Dessin_courant);
-
-                        break;
-                }
-
-                // appli.paint(appli.getGraphics());
-                // appli.afficher();
-            }
-
-            this.setTitle(Dessin_courant.Nom);
-            paint(getGraphics());
-            System.out.println("Aire "+air(getGraphics()));
-        } while (menu != 9);
     }
 
 public  int Menu() {
@@ -120,43 +71,80 @@ public  int Menu() {
 
         System.out.println("5) Quitter :");
 
-        sortie = util3.scanner.scannerint(1, 5);
+        sortie = util3.scanner.scannerint(1, 10);
 
         return sortie;
     }
 
+
+public  void fonction() {
+
+        boolean test = true;
+        int menu;
+         paint(getGraphics());
+
+        do {menu = Menu();
+            switch (menu) {
+                    case 1:Dessin_courant.ajout_forme(); break;
+                    case 2:Menu_consultation_forme( );                        break;
+                    case 3://trier les forme
+                        break;
+                    case 4:Menu_gestion_dessin();                        break;
+
+                }
+            this.setTitle(Dessin_courant.Nom);
+
+
+
+            paint(getGraphics());
+
+        } while (menu != 5);
+
+    System.exit(0);
+    }
+
+
 public void Menu_consultation_forme() {
 
-        int i=0;
+        int i;
         int choix;
-        for (Forme a:Dessin_courant.Liste)
-        {i++;
-        System.out.println(i+") "+a.toString()+"");
+        for ( i =0;i<Dessin_courant.Liste.size();i++)
+        {System.out.println(i+") "+Dessin_courant.Liste.get(i).toString()+"");
         }
 
         System.out.println(" Selectionner une forme : son numero");
-        System.out.println(" retour : "+(i+1));
+        System.out.println(" retour : "+(i));
 
-        choix = util3.scanner.scannerint(1, i+1);
-        if(choix<i+1)
-        {System.out.println(i+") "+Dessin_courant.Liste.get(choix).toString()+"");
+        choix = util3.scanner.scannerint(0, i);
 
-            System.out.println(" Que souhaitez-vous faire");
+        if(choix<i)
+        {   Forme Forme_choisie=Dessin_courant.Liste.get(choix);
+            ComplexeInt origine=new ComplexeInt(0,0);
+
+            System.out.println("\n\n\n "+Forme_choisie.toString()+"");
+            System.out.println("\nSon air vaut "+ Forme_choisie.get_air()+" pixel");
+            System.out.println("Son perimetre vaut "+ Forme_choisie.get_perimetre()+" pixel");
+            System.out.println("La distance a l'origine de l'origine de cette forme vaut "+ origine.difference(Forme_choisie.origine)+" pixel"+"\n");
+
+                    System.out.println(" Que souhaitez-vous faire");
             System.out.println("1) Deplacer la forme :  ");//
             System.out.println("2) supprimer la forme :  ");
-            System.out.println("&3) copier la forme :  ");
-            System.out.println("4) retour :  ");
+            System.out.println("3) retour :  ");
 
             switch (util3.scanner.scannerint(1, 3))
-            {case 1:break;//homothétie, translation, rotation,  symétrie centrale, symétrie axiale.
-                case 2:Dessin_courant.Liste.remove(choix);
+            {case 1:ComplexeInt nouvelle_origine=getPoint("Quel son les nouvelles coordonnes de cette forme");
+                Dessin_courant.Liste.get(choix).translate(nouvelle_origine);
+
+                break;//homothétie, translation, rotation,  symétrie centrale, symétrie axiale.
+
+            case 2:Dessin_courant.Liste.remove(choix);
                     break;
+
             }
 
 
         }
 
-        //voir detaille , deplacer / supprimer
 
     }
 
@@ -178,6 +166,11 @@ public void Menu_consultation_forme() {
                 }
             break;
 
+        case 2: System.out.println("Quel est le nom de votre nouveau dessin");
+                Dessin_courant=new Dessin(util3.scanner.scannerString());
+
+                Dessin.add(Dessin_courant);
+            break;
 
 
         }
@@ -199,5 +192,17 @@ public void Menu_consultation_forme() {
                         }
                         */
 
+    }
+
+    public ComplexeInt getPoint(String text)
+    {   int x,y;
+
+        System.out.println(text+" X ?");
+        x=util3.scanner.scannerint(0,2000);
+
+        System.out.println(text+" Y ?");
+        y=util3.scanner.scannerint(0,2000);
+
+        return new ComplexeInt(x,y);
     }
 }

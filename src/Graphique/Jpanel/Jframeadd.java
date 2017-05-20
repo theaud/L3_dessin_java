@@ -25,7 +25,7 @@ public class Jframeadd  extends JFrame {
      */
     public void  initialisation_obligatoire()
     {
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setContentPane(content);
         this.setVisible(true);

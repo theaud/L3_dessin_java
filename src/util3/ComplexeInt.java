@@ -71,7 +71,7 @@ public class ComplexeInt {
         int partieim = (this._re * C._im - this._im * C._re);
         return new ComplexeInt(partiere, partieim);
     }
-
+    public int difference(ComplexeInt C) {return (int)Math.sqrt(((_re-C.getRe())*(_re-C.getRe()))+((_im-C.getIm())*(_im-C.getIm())));}
 
     public void afficher(String nom_variable)
     {System.out.println(nom_variable+" : reel "+_re+" imaginaire "+_im);}

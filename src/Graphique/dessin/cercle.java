@@ -1,37 +1,24 @@
 package Graphique.dessin;
 
-import Graphique.app.LPixel;
 import util3.ComplexeInt;
 
 import java.awt.*;
-import java.util.Scanner;
 
-/**
- * Created by mathieu on 16/05/2017.
- */
+
 public class cercle extends Forme {
 
     public int rayon;
 
 
     public cercle()
-    {rayon=10;
-        origine=new ComplexeInt(50,50);
-        type="cercle";
-
-    }
-
-
+        {rayon=10;        origine=new ComplexeInt(50,50);        initialisation();}
 
     public cercle(ComplexeInt Origine,int Rayon)
-    {origine=Origine;
-        rayon=Rayon; type="cercle";
-    }
+        {origine=Origine; rayon=Rayon;     initialisation();}
     public cercle(int origineX,int origineY,int Rayon)
-    {origine=new ComplexeInt(origineX,origineY);
-        rayon=Rayon; type="cercle";
-    }
+        {origine=new ComplexeInt(origineX,origineY);  rayon=Rayon;    initialisation();}
 
+    public void initialisation() { type="cercle"; }
 
     public void paint(Graphics g) {
         super.paint(g);
@@ -42,17 +29,20 @@ public class cercle extends Forme {
         }
 
     }
-    public LPixel ajoue_pixel()
-    {super.ajoue_pixel();
 
-        return new LPixel();
-    }
+
+
+
+
+    @Override public void translate(ComplexeInt nouvelle_origine) { origine=nouvelle_origine;}
+    @Override public Forme copy() {return new cercle(origine,rayon);}
 
     @Override
     public String toString() {
-        return  "cercle\t{" +
-                "origine=" + origine +
-                "\trayon=" + rayon +
-                '}';
+
+        return  "Cercle\t:" +
+                "\torigine = " + origine +
+                "\n\t\t\t\trayon = " + rayon
+                ;
     }
 }
