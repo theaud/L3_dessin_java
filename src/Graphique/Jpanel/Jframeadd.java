@@ -11,7 +11,7 @@ public class Jframeadd  extends JFrame {
 
     public Jframeadd(){
 
-        content.setConfig(new Color(255,255,255),new GridBagLayout());
+        content.setConfig(new Color(255,255,128),new GridBagLayout());
 
 
         initialisation_obligatoire();

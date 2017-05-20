@@ -1,5 +1,6 @@
 package Graphique.dessin;
 
+import Graphique.app.LPixel;
 import util3.ComplexeInt;
 
 import javax.swing.*;
@@ -20,7 +21,7 @@ public class Forme extends JPanel{
        int valeur=rand.nextInt(1236) + 1;
         couleur=new Color((valeur*31)%255,(valeur*101)%255,(valeur*13)%255);
 
-    origine.set(50,50);
+        origine.set(50,50);
         type="Forme";
         compteur++;
 
@@ -29,7 +30,14 @@ public class Forme extends JPanel{
 
     public void paint(Graphics g) {
         super.paint(g);
-        g.setColor(couleur);
+
+
+    }
+
+    public LPixel ajoue_pixel()
+    {
+
+    return new LPixel();
     }
 
     @Override

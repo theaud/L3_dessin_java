@@ -4,9 +4,6 @@ import util3.ComplexeInt;
 
 import java.awt.*;
 
-/**
- * Created by mathieu on 16/05/2017.
- */
 public class Ligne extends Forme {
 
     public ComplexeInt second=new ComplexeInt();
@@ -19,7 +16,7 @@ public class Ligne extends Forme {
     public Ligne(ComplexeInt Origine, ComplexeInt Second)
     {origine=Origine;
         second=Second;
-
+        type="Ligne";
     }
 
     public Ligne(int origineX,int origineY,int secondX,int secondY)
@@ -29,7 +26,6 @@ public class Ligne extends Forme {
 
     public void paint(Graphics g) {
         super.paint(g);
-
 
         if(origine.getRe()==second.getRe())
             {for(int i=-3;i<3;i++){g.drawLine(origine.getRe()+i,origine.getIm(),second.getRe()+i,second.getIm());}}
@@ -45,8 +41,9 @@ public class Ligne extends Forme {
 
     @Override
     public String toString() {
-        return "Ligne{" +
-                "second=" + second +
+        return "Ligne\t{" +
+                "origine=" + origine +
+                "\tsecond=" + second +
                 '}';
     }
 }

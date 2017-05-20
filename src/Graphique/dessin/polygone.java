@@ -19,6 +19,7 @@ public class polygone extends Forme {
     @Override
     public String toString() {
         return "polygone{" +
+                "origine=" + origine +
                 "sommets=" + sommets +
                 '}';
     }

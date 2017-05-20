@@ -9,6 +9,7 @@ public class Application extends Jframeadd {
 
     public LinkedList<Dessin> Dessin=new LinkedList() ;
     public Dessin Dessin_courant ;
+    public  String title;
 
     public Application(){
 
@@ -17,7 +18,7 @@ public class Application extends Jframeadd {
         Dessin.add(new Dessin());
 
         Dessin_courant=Dessin.get(0);
-        String title="Application "+Dessin_courant.Liste.size();
+         title="Dessine moi un mouton ";
         this.setTitle(title);
 
         }
@@ -30,7 +31,7 @@ public void paint(Graphics g) {
                 for (Forme a : Dessin_courant.Liste)
                 { a.paint(g);}
             }
-            this.setTitle("Application " + Dessin_courant.Liste.size());
+            this.setTitle(title);
         }
         catch (java.lang.NullPointerException e) {}
     }
@@ -42,12 +43,12 @@ public int air(Graphics g) {
         int air = 0;
 
 
-    Color blanc=new Color(0,0,0);
+    Color red=new Color(255,0,0);
 
     for(int y = 0; y < HEIGHT; y++)
     {for(int x = 0; x < WIDTH; x++)
         {
-            if(getGraphics().getColor().getRed()==blanc.getRed() && getGraphics().getColor().getGreen()==blanc.getGreen() && getGraphics().getColor().getBlue()==blanc.getBlue() &&x%10==0)
+            if(getGraphics().getColor().getRed()==red.getRed() && getGraphics().getColor().getGreen()==red.getGreen() && getGraphics().getColor().getBlue()==red.getBlue() &&x%10==0)
             {
 
                 System.out.println(getGraphics().getColor().getRed()+" "+getGraphics().getColor().getGreen()+" "+getGraphics().getColor().getBlue()+" ");
@@ -66,9 +67,9 @@ public int air(Graphics g) {
 public  void fonction() {
         boolean test = true;
         int menu;
-        int menu2;
 
 
+         paint(getGraphics());
 
         do {
             menu = Menu();
@@ -79,33 +80,12 @@ public  void fonction() {
                     case 1:
                         Dessin_courant.ajout_forme();
                         break;
-                    case 2:
-                        menu2 = Menu_consultation_forme( );
+                    case 2:Menu_consultation_forme( );
                         break;
                     case 3:
 
                         break;
-                    case 4: System.out.println("menu a faire ");
-                        System.out.println("4) gestion un autre dessin :");
-                        System.out.println("5) cree un nouveau dessin :");
-                        System.out.println("&6) deplacer tous le dessin courant:");
-                        /*
-                        if(Dessin.size()==1) { System.out.println("Il n'y a pas d'autre dessin");}
-                        else
-                        {int i=0;
-                            System.out.println("Choix du nouveau dessin :");
-                            for(Dessin a:Dessin)
-                            {i++;
-                                System.out.println(i+") "+a.Nom+" ");
-                            }
-                            System.out.println("retour  "+(i+1));
-                            int  choix = util3.scanner.scannerint(1,i+1);
-                            if(choix!=i+1)
-                            {
-                                Dessin_courant= Dessin.get(choix-1);
-                            }
-                        }
-                        */
+                    case 4:Menu_gestion_dessin();
                         break;
                     case 5: System.out.println("Quel est le nom de votre nouveau dessin");
                             Dessin_courant=new Dessin(util3.scanner.scannerString());
@@ -143,13 +123,13 @@ public  int Menu() {
         return sortie;
     }
 
-public int Menu_consultation_forme() {
+public void Menu_consultation_forme() {
 
         int i=0;
         int choix;
         for (Forme a:Dessin_courant.Liste)
         {i++;
-        System.out.println(i+") "+a.toString()+"\n");
+        System.out.println(i+") "+a.toString()+"");
         }
 
         System.out.println(" Selectionner une forme : son numero");
@@ -157,7 +137,7 @@ public int Menu_consultation_forme() {
 
         choix = util3.scanner.scannerint(1, i+1);
         if(choix<i+1)
-        {System.out.println(i+") "+Dessin_courant.Liste.get(choix).toString()+"\n");
+        {System.out.println(i+") "+Dessin_courant.Liste.get(choix).toString()+"");
 
             System.out.println(" Que souhaitez-vous faire");
             System.out.println("1) Deplacer la forme :  ");//
@@ -175,7 +155,47 @@ public int Menu_consultation_forme() {
         }
 
         //voir detaille , deplacer / supprimer
-        return 1;
+
     }
 
+    public void Menu_gestion_dessin()
+    {  System.out.println("1) charger un autre dessin :");
+        System.out.println("2) cree un nouveau dessin (et basculer dessus) :");
+        System.out.println("3) deplacer tous le dessin courant:");
+        System.out.println("4) Copier le dessin courant dans un nouveau ensemble de forme");
+        System.out.println("5) Retour");
+        switch (util3.scanner.scannerint(1, 5))
+        {case 1: if(Dessin.size()==1){System.out.println("Il n'y a pas d'autre dessin");}
+            else{int i=0;
+                System.out.println("Choix du nouveau dessin :");
+                for(Dessin a:Dessin){i++; System.out.println(i+") Dessin "+a.Nom+" ");}
+
+                System.out.println("retour  "+(i+1));
+                int  choix = util3.scanner.scannerint(1,i+1);
+                if(choix!=i+1){Dessin_courant= Dessin.get(choix-1);}
+                }
+            break;
+
+
+
+        }
+                        /*
+                        if(Dessin.size()==1) { System.out.println("Il n'y a pas d'autre dessin");}
+                        else
+                        {int i=0;
+                            System.out.println("Choix du nouveau dessin :");
+                            for(Dessin a:Dessin)
+                            {i++;
+                                System.out.println(i+") "+a.Nom+" ");
+                            }
+                            System.out.println("retour  "+(i+1));
+                            int  choix = util3.scanner.scannerint(1,i+1);
+                            if(choix!=i+1)
+                            {
+                                Dessin_courant= Dessin.get(choix-1);
+                            }
+                        }
+                        */
+
+    }
 }

@@ -4,9 +4,7 @@ import util3.ComplexeInt;
 
 import java.awt.*;
 
-/**
- * Created by mathieu on 16/05/2017.
- */
+
 public class ellipse extends Forme {
 
     public ComplexeInt rayon;
@@ -21,15 +19,15 @@ public class ellipse extends Forme {
 
     public ellipse(int origineX,int origineY,int Rayon1,int Rayon2)
     {origine=new ComplexeInt(origineX,origineY);
-    rayon=new ComplexeInt(Rayon1,Rayon2);
+    rayon=new ComplexeInt(Rayon1,Rayon2);   type="ellipse";
     }
     public ellipse(ComplexeInt Origine,ComplexeInt  Rayon)
     {origine=Origine;
-    rayon= Rayon;
+    rayon= Rayon;   type="ellipse";
     }
     public ellipse(ComplexeInt Origine,int Rayon1,int Rayon2)
     {origine=Origine;
-        rayon=new ComplexeInt(Rayon1,Rayon2);
+        rayon=new ComplexeInt(Rayon1,Rayon2);   type="ellipse";
     }
 
 
@@ -45,8 +43,9 @@ public class ellipse extends Forme {
 
     @Override
     public String toString() {
-        return "ellipse{" +
-                "rayon=" + rayon +
+        return "ellipse\t{" +
+                "origine=" + origine +
+                "\trayon=" + rayon +
                 '}';
     }
 }

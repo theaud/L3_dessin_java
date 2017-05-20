@@ -25,11 +25,11 @@ public class cercle extends Forme {
 
     public cercle(ComplexeInt Origine,int Rayon)
     {origine=Origine;
-        rayon=Rayon;
+        rayon=Rayon; type="cercle";
     }
     public cercle(int origineX,int origineY,int Rayon)
     {origine=new ComplexeInt(origineX,origineY);
-        rayon=Rayon;
+        rayon=Rayon; type="cercle";
     }
 
 
@@ -50,8 +50,9 @@ public class cercle extends Forme {
 
     @Override
     public String toString() {
-        return "cercle{" +
-                "rayon=" + rayon +
+        return  "cercle\t{" +
+                "origine=" + origine +
+                "\trayon=" + rayon +
                 '}';
     }
 }

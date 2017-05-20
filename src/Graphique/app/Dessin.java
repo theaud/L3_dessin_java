@@ -14,65 +14,52 @@ import java.util.LinkedList;
 public class Dessin {
 
     public LinkedList<Forme> Liste=new LinkedList<Forme>() ;
-    public String Nom="sans nom";
+    public String Nom="Sans nom";
     public LPixel pixel=new LPixel();
 
     public static int HEIGHT=800;
     public static int WIDTH=800;
 
-    public Dessin()
-    {
-        Nom="Premier dessin";
-        pixel=new LPixel();
-    }
+    public Dessin() { Nom="Premier dessin"; pixel=new LPixel();}
 
-public   Dessin(String nom)
-    {   Nom=nom;
-        pixel=new LPixel();
+    public   Dessin(String nom) {   Nom=nom;    pixel=new LPixel();}
+    public LPixel update_pixel() {
+            pixel=new LPixel();
 
-    }
-    public LPixel update_pixel()
-    {
-        pixel=new LPixel();
+            try {
 
-        try {
+                if (Liste.size() > 0) {
+                    for (Forme a : Liste)
+                    { pixel.ajoue(a.ajoue_pixel());
 
-            if (Liste.size() > 0) {
-                for (Forme a : Liste)
-                { pixel.ajoue(a.ajoue_pixel());
-
+                    }
                 }
+
             }
+            catch (java.lang.NullPointerException e) {}
 
+            return pixel;
         }
-        catch (java.lang.NullPointerException e) {}
-
-        return pixel;
-    }
 
 
-public static Dessin test()
-    {   Dessin returned =new Dessin();
-        returned.Nom="test";
-        returned.Liste.add(new Ligne(50,50,100,50));        returned.Liste.add(new Ligne(150,100,150,150));        returned.Liste.add(new Ligne(300,300,400,400));
-        returned.Liste.add(new cercle(300,300,50));        returned.Liste.add(new cercle(300,300,30));
-        returned.Liste.add(new ellipse(600,600,50,50));        returned.Liste.add(new ellipse(600,600,50,40));        returned. Liste.add(new ellipse(600,600,40,50));
+    public static Dessin test() {   Dessin returned =new Dessin();
+            returned.Nom="test";
+            returned.Liste.add(new Ligne(50,50,100,50));        returned.Liste.add(new Ligne(150,100,150,150));        returned.Liste.add(new Ligne(300,300,400,400));
+            returned.Liste.add(new cercle(300,300,50));        returned.Liste.add(new cercle(300,300,30));
+            returned.Liste.add(new ellipse(600,600,50,50));        returned.Liste.add(new ellipse(600,600,50,40));        returned. Liste.add(new ellipse(600,600,40,50));
 
-        returned.pixel=returned.update_pixel();
-        return returned;
-    }
+            returned.pixel=returned.update_pixel();
+            return returned;
+        }
+    public  static Dessin toto() {   Dessin returned =new Dessin();
+            returned.Nom="toto";
+            int X=400,Y=400;
+            returned.Liste.add(new cercle(X,Y,200));
+            returned.Liste.add(new Ligne(X-50,Y,X+50,Y));        returned.Liste.add(new Ligne(X,Y+50,X,Y-50));
+            returned.Liste.add(new cercle(X-75,Y-75,50));        returned.Liste.add(new cercle(X-75,Y+75,50));        returned.Liste.add(new ellipse(X+100,Y,20,80));
 
-
-public  static Dessin toto()
-    {   Dessin returned =new Dessin();
-        returned.Nom="toto";
-        int X=400,Y=400;
-        returned.Liste.add(new cercle(X,Y,200));
-        returned.Liste.add(new Ligne(X-50,Y,X+50,Y));        returned.Liste.add(new Ligne(X,Y+50,X,Y-50));
-        returned.Liste.add(new cercle(X-75,Y-75,50));        returned.Liste.add(new cercle(X-75,Y+75,50));        returned.Liste.add(new ellipse(X+100,Y,20,80));
-
-        return returned;
-    }
+            return returned;
+        }
 
 
 public void ajout_forme()
@@ -90,8 +77,8 @@ public void ajout_forme()
         System.out.println("5) Une elipse par son origine ,le point le plus proche et le point le plus loin : ");
 
         System.out.println("&6) Un rectangle par son origine et le point opose : ");
-        //  System.out.println("7) Un rectangle  : ");
-        //System.out.println("8) Un carre  : ");
+        System.out.println("&7) Un rectangle  : ");
+        System.out.println("&8) Un carre  : ");
         // autre carre
         System.out.println("&9) Un polygone  par la liste de ses sommet: ");
 
