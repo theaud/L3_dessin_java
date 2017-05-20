@@ -2,6 +2,7 @@ package Graphique.app;
 
 import Graphique.Jpanel.Jframeadd;
 import Graphique.dessin.Forme;
+
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -39,7 +40,7 @@ public void paint(Graphics g) {
 public int air(Graphics g) {
 
 
-
+/*
         int air = 0;
 
 
@@ -61,7 +62,8 @@ public int air(Graphics g) {
         }
     }
     System.out.println(air);
-        return air;
+        return air;*/
+    return 1;
     }
 
 public  void fonction() {
