@@ -14,8 +14,12 @@ public class polygone extends Forme {
 
     public polygone(ComplexeInt Origine,LinkedList<ComplexeInt> Sommets)
     {
-        origine=Origine;
-        sommets= Sommets;
+        origine = Origine.clone();
+
+        for (ComplexeInt a : Sommets) {
+            sommets.add(a.clone());
+        }
+
 
     }
 
@@ -45,22 +49,34 @@ public class polygone extends Forme {
     public void translate(ComplexeInt nouvelle_origine)
     {
         ComplexeInt translation=new ComplexeInt(origine.getRe()-nouvelle_origine.getRe(),origine.getIm()-nouvelle_origine.getIm());
-        origine=nouvelle_origine;
-        for(int i=0;i<sommets.size();i++)
-        {
-            sommets.get(i).set(sommets.get(i).getRe()+translation.getRe(),sommets.get(i).getIm()+translation.getIm());
-        }
 
+        deplacement(translation);
+    }
+
+    @Override
+    public void deplacement(ComplexeInt vecteur) {
+        for (int i = 0; i < sommets.size(); i++) {
+            sommets.get(i).set(sommets.get(i).getRe() + vecteur.getRe(), sommets.get(i).getIm() + vecteur.getIm());
+        }
+        origine.set(origine.getRe() + vecteur.getRe(), origine.getIm() + vecteur.getIm());
     }
 
 
-
-    @Override public Forme copy() {return new polygone(origine,sommets);}
+    @Override
+    public Forme clone() {
+        return new polygone(origine, sommets);
+    }
     @Override
     public String toString() {
-        return "polygone\t:" +
-                "\torigine=" + origine +
-                "\n\t\t\t\tsommets=" + sommets
-                ;
+
+
+        String returned = "polygone\t:" +
+                "\tID=" + ID +
+                "\torigine=" + origine;
+        for (ComplexeInt a : sommets) {
+            returned += "\n\t\t\t\tsommets=" + a;
+        }
+        return returned;
+
     }
 }

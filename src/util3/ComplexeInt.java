@@ -10,10 +10,10 @@ package util3;
  * @author mathieu
  */
 public class ComplexeInt {
-    
-    
+
+    private int _re;
       private int _im;
-      private int _re;  
+
     
  //***************************************************************************************   
     
@@ -21,7 +21,8 @@ public class ComplexeInt {
     {_im=0;
      _re=0;   
     }
-    public  ComplexeInt(int im,int re)
+
+    public ComplexeInt(int re, int im)
     {_im=im;
      _re=re;   
     }
@@ -77,11 +78,17 @@ public class ComplexeInt {
     {System.out.println(nom_variable+" : reel "+_re+" imaginaire "+_im);}
 
 
+    public ComplexeInt clone() {
+        return new ComplexeInt(_re, _im);
+    }
+
+
     @Override
     public String toString() {
         return "\tComplexeInt{" +
-                "_im=" + _im +
-                ", _re=" + _re +
+                "_re=" + _re +
+                ", _im=" + _im +
+
                 '}';
     }
 }

@@ -18,16 +18,16 @@ public class Ligne extends Forme {
 
     }
 
-    public Ligne(ComplexeInt Origine, ComplexeInt Second)
-    {origine=Origine;
-        second=Second;
+    public Ligne(ComplexeInt Origine, ComplexeInt Second) {
+        origine = Origine.clone();
+        second = Second.clone();
         largeur=3;
         initialisation();
     }
 
-    public Ligne(ComplexeInt Origine, ComplexeInt Second,int Largeur)
-    {origine=Origine;
-        second=Second;
+    public Ligne(ComplexeInt Origine, ComplexeInt Second,int Largeur) {
+        origine = Origine.clone();
+        second = Second.clone();
         largeur=Largeur;
         initialisation();
     }
@@ -73,18 +73,27 @@ public class Ligne extends Forme {
 
 
 
-    @Override public void translate(ComplexeInt nouvelle_origine)
-    { origine=nouvelle_origine;
+    @Override public void translate(ComplexeInt nouvelle_origine) {
         ComplexeInt translation=new ComplexeInt(origine.getRe()-nouvelle_origine.getRe(),origine.getIm()-nouvelle_origine.getIm());
-        second.set(second.getRe()+translation.getRe(),second.getIm()+translation.getIm());
+        deplacement(translation);
     }
 
+    @Override
+    public void deplacement(ComplexeInt vecteur) {
 
-    @Override public Forme copy() {return new Ligne(origine,second,largeur);}
+        second.set(second.getRe() + vecteur.getRe(), second.getIm() + vecteur.getIm());
+        origine.set(origine.getRe() + vecteur.getRe(), origine.getIm() + vecteur.getIm());
+    }
+
+    @Override
+    public Forme clone() {
+        return new Ligne(origine.clone(), second.clone(), largeur);
+    }
 
     @Override
     public String toString() {
         return "Ligne\t:" +
+                "\tID=" + ID +
                 "\torigine = " + origine +
                 "\n\t\t\t\tsecond = " + second
                 ;

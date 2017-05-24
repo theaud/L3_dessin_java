@@ -22,9 +22,9 @@ public class ellipse extends Forme {
     }
 
 
-    public ellipse(ComplexeInt Origine,ComplexeInt  Rayon)
-    {origine=Origine;
-        rayon = Rayon;
+    public ellipse(ComplexeInt Origine,ComplexeInt  Rayon) {
+        origine = Origine.clone();
+        rayon = Rayon.clone();
         initialisation();
     }
     public ellipse(ComplexeInt Origine,int Rayon1,int Rayon2)
@@ -44,7 +44,6 @@ public class ellipse extends Forme {
         g.fillOval(origine.getRe()-rayon.getRe(),origine.getIm()-rayon.getIm(),rayon.getRe()*2,rayon.getIm()*2);
         g.setColor(couleur);
 
-
     }
 
     public void air_perimettre() {
@@ -58,13 +57,20 @@ public class ellipse extends Forme {
     }
 
     @Override
-    public Forme copy() {
+    public void deplacement(ComplexeInt vecteur) {
+        origine.set(origine.getRe() + vecteur.getRe(), origine.getIm() + vecteur.getIm());
+    }
+
+
+    @Override
+    public Forme clone() {
         return new ellipse(origine, rayon);
     }
     @Override
     public String toString() {
 
         return "ellipse\t:" +
+                "\tID=" + ID +
                 "\torigine = " + origine +
                 "\n\t\t\t\trayon = " + rayon
                 ;

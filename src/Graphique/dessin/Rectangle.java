@@ -16,8 +16,8 @@ public class Rectangle extends Forme {
     }
 
     public Rectangle(ComplexeInt Origine, ComplexeInt Second) {
-        origine = Origine;
-        second = Second;
+        origine = Origine.clone();
+        second = Second.clone();
         initialisation();
     }
 
@@ -50,22 +50,27 @@ public class Rectangle extends Forme {
 
 
     @Override
-    public Forme copy() {
+    public Forme clone() {
         return new Rectangle(origine, second);
     }
 
-
     @Override
     public void translate(ComplexeInt nouvelle_origine) {
-        origine = nouvelle_origine;
+
         ComplexeInt translation = new ComplexeInt(origine.getRe() - nouvelle_origine.getRe(), origine.getIm() - nouvelle_origine.getIm());
-        second.set(second.getRe() + translation.getRe(), second.getIm() + translation.getIm());
+        deplacement(translation);
     }
 
+    @Override
+    public void deplacement(ComplexeInt vecteur) {
+        second.set(second.getRe() + vecteur.getRe(), second.getIm() + vecteur.getIm());
+        origine.set(origine.getRe() + vecteur.getRe(), origine.getIm() + vecteur.getIm());
+    }
 
     @Override
     public String toString() {
         return "Rectangle\t:" +
+                "\tID=" + ID +
                 "\torigine = " + origine +
                 "\n\t\t\t\tsecond = " + second
                 ;

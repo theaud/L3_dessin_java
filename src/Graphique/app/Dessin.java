@@ -30,24 +30,61 @@ public class Dessin {
 
     public  static Dessin toto() {   Dessin returned =new Dessin();
             returned.Nom="toto";
-            int X=400,Y=400;
-            returned.Liste.add(new cercle(X,Y,200));
-            returned.Liste.add(new Ligne(X-50,Y,X+50,Y));        returned.Liste.add(new Ligne(X,Y+50,X,Y-50));
-            returned.Liste.add(new cercle(X-75,Y-75,50));        returned.Liste.add(new cercle(X-75,Y+75,50));        returned.Liste.add(new ellipse(X+100,Y,20,80));
+        int x = 150, y = 200;
+        int Y = y, X = x;
 
-        returned.Liste.add(new Ligne(0, 800, 800, 800));
 
-        Y = 1200;
-        returned.Liste.add(new cercle(X, Y, 200));
-        returned.Liste.add(new Ligne(X - 50, Y, X + 50, Y));
-        returned.Liste.add(new Ligne(X, Y + 50, X, Y - 50));
-        returned.Liste.add(new cercle(X - 75, Y - 75, 50));
-        returned.Liste.add(new cercle(X - 75, Y + 75, 50));
-        returned.Liste.add(new ellipse(X + 100, Y, 20, 80));
+        returned.Liste.add(new cercle(X, Y, 100));
+        returned.Liste.add(new Ligne(X - 25, Y, X + 25, Y));
+        returned.Liste.add(new Ligne(X, Y + 25, X, Y - 25));
+        returned.Liste.add(new cercle(X - 37, Y - 37, 25));
+        returned.Liste.add(new cercle(X + 37, Y - 37, 25));
+        returned.Liste.add(new ellipse(X, Y + 50, 40, 10));
+
+        Calque toto = new Calque(returned, new ComplexeInt(200, 200));
+        returned.Liste.add(toto.clone());
 
         return returned;
         }
 
+    public static Dessin mouton() {
+        Dessin returned = new Dessin();
+        returned.Nom = "mouton";
+
+
+        int x = 400, y = 400;
+        int Y = y, X = x;
+
+        returned.Liste.add(new ellipse(X, Y, 200, 50));
+        returned.Liste.add(new cercle(X - 200, Y - 50, 50));
+
+
+        cercle cercle1 = new cercle(X - 200 - 25, Y - 50, 10);
+        returned.Liste.add(cercle1.clone());
+        cercle1.deplacement(new ComplexeInt(50, 0));
+        returned.Liste.add(cercle1.clone());
+
+        cercle cercle2 = new cercle(X - 200 - 35, Y - 50 - 50, 25);
+        returned.Liste.add(cercle2.clone());
+        cercle2.deplacement(new ComplexeInt(70, 0));
+        returned.Liste.add(cercle2.clone());
+
+        returned.Liste.add(new Ligne(X - 210, Y - 20, X - 190, Y - 20));
+
+
+        Ligne tmp = new Ligne(new ComplexeInt(X, Y), new ComplexeInt(X, Y - 40), 10);
+        tmp.deplacement(new ComplexeInt(-100, 80));
+        returned.Liste.add(tmp.clone());
+        tmp.deplacement(new ComplexeInt(50, 10));
+        returned.Liste.add(tmp.clone());
+        tmp.deplacement(new ComplexeInt(50, 10));
+        returned.Liste.add(tmp.clone());
+        tmp.deplacement(new ComplexeInt(50, -10));
+        returned.Liste.add(tmp.clone());
+
+
+        return returned;
+    }
     public LPixel update_pixel() {/*
             pixel=new LPixel();
 
@@ -67,136 +104,29 @@ public class Dessin {
         return new LPixel();
     }
 
-public void ajout_forme()
-    {
-        int sortie;
 
-        System.out.println("\n\n\n\n\n\n\n----------------------------------------");
-        System.out.println("Quel Forme voulez-vous ajoute a votre dessin");
-
-        System.out.println("1) Un segement par son origine et un second point : ");
-        System.out.println("2) Un segement par son origine et un second point et choisir sa largeur : ");
-
-        System.out.println("3) Un cercle par son origine et son rayon : ");
-        System.out.println("4) Un cercle par son origine et un point du cercle : ");
-        System.out.println("5) Une elipse par son origine ,le point le plus proche et le point le plus loin : ");
-
-        System.out.println("6) Un rectangle par son origine et le point opose : ");
-        System.out.println("7) Un rectangle avec hauteur et largeur : ");
-        System.out.println("8) Un carre  : ");
-        // autre carre
-        System.out.println("9) Un polygone  par la liste de ses sommet: ");
-
-        System.out.println("&10) Ajoue de la forme copier (preselectionner) : ");
-        System.out.println("&11) copier un calque deja existante : ");
-        System.out.println("12) retour : ");
-
-        sortie=util3.scanner.scannerint( 1, 12);
-
-        if (sortie != 12)
+    public void deplacement(ComplexeInt deplacement) {
+        for (Forme a : Liste)
         {
+            System.out.println(a.toString() + " " + (a.origine.getRe() + deplacement.getRe()) + " " + (a.origine.getIm() + deplacement.getIm()));
 
-            ComplexeInt origine=getPoint("Quel est son origine ");
-            ComplexeInt point2;
-            int largeur, hauteur;
+            a.deplacement(new ComplexeInt(deplacement.getRe(), deplacement.getIm()));
 
-            switch (sortie)
-            {   case 1: point2=getPoint("Quel est le second point");
-                Liste.add(new Ligne(origine,point2));
-                break;
-
-                case 2:
-                    point2 = getPoint("Quel est le second point");
-                    largeur = getint("Quel est sa largeur?");
-                    Liste.add(new Ligne(origine, point2, largeur));
-                    break;
-
-                case 3:Liste.add(new cercle(origine,getint("Quel est le rayon du cercle")));
-                    break;
-
-                case 4: point2=getPoint("Quel est le second point");
-                    int rayon = origine.difference(point2);
-
-                    Liste.add(new cercle(origine, rayon));
-                    break;
-                case 5: int rayon1=getint("Quel est le petit rayon de l'elispe");
-                    int rayon2=getint("Quel est le grand rayon de l'elispe");
-                    Liste.add(new ellipse(origine,new ComplexeInt(rayon1,rayon2)));
-                    break;
-
-                case 6:
-                    point2 = getPoint("Quel est le point opose");
-                    Liste.add(new Graphique.dessin.Rectangle(origine, point2));
-                    break;
-                case 7:
-                    hauteur = getint("Quel est est la valeur de sa hauteur");
-                    largeur = getint("Quel est est la valeur de sa largeur");
-                    Liste.add(new Graphique.dessin.Rectangle(origine, new ComplexeInt(origine.getRe() + hauteur, origine.getIm() + largeur)));
-                    break;
-                case 8:
-                    largeur = getint("Quel est est la valeur de son coter");
-                    Liste.add(new Graphique.dessin.Rectangle(origine, new ComplexeInt(origine.getRe() + largeur, origine.getIm() + largeur)));
-                    break;
-                case 9:
-                    origine = getPoint("Quel est son premier sommet ?");
-                    LinkedList<ComplexeInt> sommets = new LinkedList<ComplexeInt>();
-                    while (1 == getint("1) Ajouter un sommet ")) {
-                        sommets.add(getPoint("Donner les coordonnées de ce sommet"));
-
-                    }
-                    Liste.add(new polygone(origine, sommets));
-
-                    break;
-                case 10:
-                    System.out.println("Quel forme voulez vous copier");
-                    int i;
-                    for (i = 0; i < Liste.size(); i++) {
-                        System.out.println(i + ") " + Liste.get(i).toString() + "");
-                    }
-                    System.out.println(" Selectionner une forme : son numero");
-                    System.out.println(" retour : " + (i + 1));
-                    int choix = util3.scanner.scannerint(0, i + 1);
-
-                    if (choix != i + 1) {
-                        Forme copy = Liste.get(choix).copy();
-                        copy.translate(origine);
-                        Liste.add(copy);
-                    }
-
-                    break;
-                case 11:
-                    break;
-                case 12:
-                    break;
-
-            }
+            System.out.println(a.toString());
+            System.out.println("----------------------------");
         }
     }
 
-public ComplexeInt getPoint(String text)
-    {   int x,y;
-
-        System.out.println(text+" X ?");
-        x=util3.scanner.scannerint(0,2000);
-
-        System.out.println(text+" Y ?");
-        y=util3.scanner.scannerint(0,2000);
-
-        return new ComplexeInt(x,y);
-    }
-
-public int getint(String text)
-    {   int x;
-
-        System.out.println(text);
-        x=util3.scanner.scannerint(0,2000);
-
-        return x;
-    }
 
 public void afficher(){for (int i=0;i<Liste.size();i++)       {i++;System.out.println("dessin :"+Liste.get(i).type+" "+i);}}
 
 
-
-
+    @Override
+    public String toString() {
+        return "Dessin{" +
+                "Liste=" + Liste +
+                ", Nom='" + Nom + '\'' +
+                ", pixel=" + pixel +
+                '}';
+    }
 }
