@@ -8,8 +8,7 @@ import java.util.LinkedList;
 
 public class Dessin {
 
-    public static int HEIGHT = 800;
-    public static int WIDTH = 800;
+
     public LinkedList<Forme> Liste=new LinkedList<Forme>() ;
     public String Nom="Sans nom";
     public LPixel pixel=new LPixel();
@@ -30,8 +29,8 @@ public class Dessin {
 
     public  static Dessin toto() {   Dessin returned =new Dessin();
             returned.Nom="toto";
-        int x = 150, y = 200;
-        int Y = y, X = x;
+        int Y = 150, X = 200;
+
 
 
         returned.Liste.add(new cercle(X, Y, 100));
@@ -52,8 +51,8 @@ public class Dessin {
         returned.Nom = "mouton";
 
 
-        int x = 400, y = 400;
-        int Y = y, X = x;
+        int X = 400, Y = 400;
+
 
         returned.Liste.add(new ellipse(X, Y, 200, 50));
         returned.Liste.add(new cercle(X - 200, Y - 50, 50));
@@ -77,9 +76,9 @@ public class Dessin {
         returned.Liste.add(tmp.clone());
         tmp.deplacement(new ComplexeInt(50, 10));
         returned.Liste.add(tmp.clone());
-        tmp.deplacement(new ComplexeInt(50, 10));
+        tmp.deplacement(new ComplexeInt(50, 0));
         returned.Liste.add(tmp.clone());
-        tmp.deplacement(new ComplexeInt(50, -10));
+        tmp.deplacement(new ComplexeInt(50, 0));
         returned.Liste.add(tmp.clone());
 
 

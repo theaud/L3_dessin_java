@@ -77,7 +77,7 @@ public  int Menu() {
         System.out.println("1) Ajoutez une Forme :");
         System.out.println("2) Consulter les formes deja présente :");//voir detaille , deplacer / supprimer
         System.out.println("&3) Trier les formes :");
-        System.out.println("&4) gestion dessin :");
+    System.out.println("4) gestion dessin :");
 
         System.out.println("5) Quitter :");
 
@@ -198,6 +198,10 @@ public void Menu_consultation_forme() {
                 Dessin_courant.deplacement(deplacement);
                 break;
 
+            case 4:
+                List_Calque.add(new Calque(Dessin_courant, new ComplexeInt(0, 0)));
+
+
         }
                         /*
                         if(Dessin.size()==1) { System.out.println("Il n'y a pas d'autre dessin");}
@@ -239,7 +243,7 @@ public void Menu_consultation_forme() {
         System.out.println("9) Un polygone  par la liste de ses sommet: ");
 
         System.out.println("&10) Ajoue de la forme copier (preselectionner) : ");
-        System.out.println("&11) copier un calque deja existante : ");
+        System.out.println("11) copier un calque deja existante : ");
         System.out.println("12) retour : ");
 
         sortie = util3.scanner.scannerint(1, 12);
